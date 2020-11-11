@@ -8,7 +8,7 @@ android {
     buildToolsVersion Config.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.noscale.cermatipot"
+        applicationId "com.noscale.cermati"
         minSdkVersion Config.minSdkVersion
         targetSdkVersion Config.targetSdkVersion
         versionCode 1
@@ -21,6 +21,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${rootProject.name}.apk"
+                }
+            }
         }
     }
     compileOptions {
@@ -38,11 +43,14 @@ dependencies {
     implementation Deps.appCompat
     implementation Deps.material
     implementation Deps.constraintLayout
+    implementation Deps.swipeRefreshLayout
     implementation Deps.recyclerView
     implementation Deps.lottie
     implementation Deps.sdp
     implementation Deps.ssp
     implementation Deps.retrofit
+    implementation Deps.okHttpClient
+    implementation Deps.rateLimiter
     implementation Deps.gson
     implementation Deps.picasso
     testImplementation Deps.junit

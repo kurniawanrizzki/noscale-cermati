@@ -25,6 +25,8 @@ object Versions {
     val vOkHttpClient = "4.9.0"
     val vPicasso = "2.71828"
     val vIntuit = "1.0.6"
+    val vRateLimiter = "19.1"
+    val vSwipeRefreshLayout = "1.1.0"
 
     val vJunit = "4.+"
     val vJunitExt = "1.1.2"
@@ -39,6 +41,7 @@ object Deps {
     val appCompat = "androidx.appcompat:appcompat:${Versions.vCore}"
     val material = "com.google.android.material:material:${Versions.vMaterial}"
     val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.vConstraintLayout}"
+    val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.vSwipeRefreshLayout}"
     val recyclerView = "androidx.recyclerview:recyclerview:${Versions.vRecyclerView}"
     val lottie = "com.airbnb.android:lottie:${Versions.vLottie}"
     val sdp = "com.intuit.sdp:sdp-android:${Versions.vIntuit}"
@@ -46,6 +49,7 @@ object Deps {
 
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.vRetrofit}"
     val okHttpClient = "com.squareup.okhttp3:okhttp:${Versions.vOkHttpClient}"
+    val rateLimiter = "com.revinate:guava-rate-limiter:${Versions.vRateLimiter}"
     val gson = "com.squareup.retrofit2:converter-gson:${Versions.vRetrofit}"
     val picasso = "com.squareup.picasso:picasso:${Versions.vPicasso}"
 
