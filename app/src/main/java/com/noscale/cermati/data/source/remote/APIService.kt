@@ -1,5 +1,6 @@
 package com.noscale.cermati.data.source.remote
 
+import com.noscale.cermati.BuildConfig
 import com.noscale.cermati.data.source.remote.user.UserAPI
 import com.revinate.guava.util.concurrent.RateLimiter
 import okhttp3.Interceptor
@@ -28,7 +29,7 @@ object APIService {
                 limiter.acquire(REQUEST_INTERVAL_CALL_LIMIT)
 
                 val builder = chain.request().newBuilder()
-                builder.header("Authorization", "token bc873339c660eeafcd6beff927056e762e486729")
+                builder.header("Authorization", "token ${BuildConfig.ACCESS_TOKEN}")
 
                 return chain.proceed(builder.build())
             }

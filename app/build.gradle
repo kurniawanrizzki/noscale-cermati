@@ -7,6 +7,11 @@ android {
     compileSdkVersion Config.compileSdkVersion
     buildToolsVersion Config.buildToolsVersion
 
+    // Load access token from properties
+    def githubFileProperties = rootProject.file ("github.properties")
+    def githubProperties = new Properties()
+    githubProperties.load(new FileInputStream(githubFileProperties))
+
     defaultConfig {
         applicationId "com.noscale.cermati"
         minSdkVersion Config.minSdkVersion
@@ -15,6 +20,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //access token
+        buildConfigField "String", "ACCESS_TOKEN", githubProperties["ACCESS_TOKEN"]
     }
 
     buildTypes {
